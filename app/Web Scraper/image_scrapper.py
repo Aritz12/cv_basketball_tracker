@@ -4,9 +4,9 @@ from serpapi import GoogleSearch
 
 def get_google_images():
     params = {
-        "api_key": os.environ.get("SERPAPI_KEY"),
+        "api_key": "5833db577d1c3a379e01c29d358e5184c5dac722be2f579566e80d096cfcca54",
         "engine": "google",
-        "q": "cat",
+        "q": "wilson basketball",
         "tbm": "isch",
     }
 

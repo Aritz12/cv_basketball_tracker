@@ -15,10 +15,12 @@ def get_yolo_net(cfg_path, weight_path):
         return YOLO net
     """
 
-    if not cfg_path or not weight_path:
+    if not cfg_path or not weight_path: # if there is no path provided or the path does not exists
         raise Exception('missing inputs. See file.')
 
     print('[INFO] loading YOLO from disk...')
+    # dnn = deep neural network
+    # https://opencv-tutorial.readthedocs.io/en/latest/yolo/yolo.html
     net = cv2.dnn.readNetFromDarknet(cfg_path, weight_path)
 
     return net
@@ -158,8 +160,11 @@ def yolo_save_img(image, class_ids, boxes, labels, confidences, colors, file_pat
 
 
 def yolo_show_img(image, class_ids, boxes, labels, confidences, colors):
-    """
-    show without save a image with bounding boxes
+    """Show without save a image with bounding boxes.
+    
+    Args:
+    
+    Returns:
     """
     for i, box in enumerate(boxes):
         # extract the bounding box coordinates
